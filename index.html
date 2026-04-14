@@ -28,5 +28,79 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="JS/get.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="MiniWebÁruház projektfeladat"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>MiniWebÁruház</title>
+</head>
+<body>
+    
+    <header class="bg-dark text-white py-4 mb-4">
+        <div class="container text-center">
+            <h1>MiniWebÁruház</h1>
+        </div>
+    </header>
+    <main class="container">
+        <section id="add-product" class="mb-5">
+            <div class="shadow-sm">
+                <h2 class="h4 mb-3">Új termék létrehozása</h2>
+                <form id="product-form" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="text" class="form-label">Termék neve: </label>
+                        <input type="text" id="nev" class="form-control" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="price" class="form-label">Ár: </label>
+                        <input type="number" class="form-control" id="ar" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="kep" class="form-label">Kép: </label>
+                        <input type="url" class="form-control" id="kep" placeholder="https://...">
+                    </div>
+                    <div class="col-12">
+                        <label for="leiras" class="form-label">Leírás: </label>
+                        <textarea class="form-control" id="leiras" rows="2" required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-success">Termék hozzáadása</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+   
+
+        <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ár módosítása: </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="edit-form">
+                            <input type="hidden" id="edit-id">
+                            <div class="mb-3">
+                                <label for="edit-price" class="form-label">Új ár: </label>
+                                <input type="number" class="form-control" id="edit-price" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Mentés</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light py-4 mt-5 border-top">
+        <div class="container text-center text-muted">
+            
+        </div>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
