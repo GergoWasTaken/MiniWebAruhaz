@@ -1,3 +1,4 @@
+const szerver = document.getElementById("szervermegvan")
 document.getElementById("urlap").addEventListener("submit", async (e) => {
     e.preventDefault()
     const nev = document.getElementById("nev").value
@@ -13,9 +14,28 @@ document.getElementById("urlap").addEventListener("submit", async (e) => {
     };
 
     const csomag = {
-        "method": PUT,
+        "method": "POST",
         headers: {
             "Content-Type": "application/js"
+        },
+        body: JSON.stringify(adat)
+    };
+
+    try{
+        const szervervalasz = await fetch("https://dummyjson.com/products/add", csomag);
+        const eredmeny = szervervalasz.json()
+        if (szervervalasz.ok) {
+            console.log("sikeres rögzítés")
+            alert("Sikeresen rögzítette a terméket")
         }
+        else{
+            console.log("Sikertelen rögzítés")
+            alert("Sikertelen rögzítés")
+        }
+        
     }
+    catch(error){
+        document.getElementById("eredmenyhely").textContent = "Hiba történt"+ error.message;
+    }
+
 })
