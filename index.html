@@ -35,11 +35,11 @@
                 <h2 class="h4 mb-3">Új termék létrehozása</h2>
                 <form id="product-form" class="row g-3">
                     <div class="col-md-6">
-                        <label for="text" class="form-label">Termék neve: </label>
+                        <label for="nev" class="form-label">Termék neve: </label>
                         <input type="text" id="nev" class="form-control" required>
                     </div>
                     <div class="col-md-3">
-                        <label for="price" class="form-label">Ár: </label>
+                        <label for="ar" class="form-label">Ár: </label>
                         <input type="number" class="form-control" id="ar" required>
                     </div>
                     <div class="col-md-3">
@@ -60,10 +60,6 @@
         <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Ár módosítása: </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
                     <div class="modal-body">
                         <form id="edit-form">
                             <input type="hidden" id="edit-id">
