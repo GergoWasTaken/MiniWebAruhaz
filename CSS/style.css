@@ -25,7 +25,9 @@
 }
 
 header {
+    position: fixed;
     z-index: 1030;
+    width: 100%;
 }
 
 .sticky-top {
@@ -44,6 +46,38 @@ footer .lista li {
 
 footer .szin {
     color: #0d6efd !important; 
+}
+
+#hozzaadas {
+    display: none;
+}
+
+#termek_hozzaadas:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+#termek_hozzaadas:active {
+    background-color: #0a58ca;
+    border-color: #084298;
+}
+
+#vissza_termekekhez {
+    display: none;
+}
+
+#vissza_termekekhez:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+#vissza_termekekhez:active {
+    background-color: #0a58ca;
+    border-color: #084298;
+}
+
+.termekek {
+    display: block;
 }
 
 @media (max-width: 576px) {
