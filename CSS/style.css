@@ -1,0 +1,36 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .div {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    background-color: #f8f9fa;
+}
+
+.card {
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.description-text {
+    height: 60px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
