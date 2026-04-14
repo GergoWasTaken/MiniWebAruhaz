@@ -31,3 +31,42 @@ header {
 .sticky-top {
     z-index: 1020;
 }
+
+footer {
+    width: 100%;
+    margin-top: auto; 
+}
+
+footer .lista li {
+    font-size: 0.95rem;
+    color: #adb5bd; 
+}
+
+footer .szin {
+    color: #0d6efd !important; 
+}
+
+@media (max-width: 576px) {
+    #product-list > div {
+        width: 100%;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    #product-list > div {
+        width: 50%;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 992px) {
+    #product-list > div {
+        width: 33.333%;
+    }
+}
+
+@media (min-width: 993px) {
+    #product-list > div {
+        width: 25%;
+    }
+}
