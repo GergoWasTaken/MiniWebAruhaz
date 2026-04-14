@@ -1,6 +1,5 @@
-const szerver = document.getElementById("szervermegvan")
 
-document.getElementById("urlap").addEventListener("submit", async (e) => {
+document.getElementById("product-form").addEventListener("submit", async (e) => {
     e.preventDefault()
     let helyes = true
     const nev = document.getElementById("nev").value
@@ -22,14 +21,11 @@ document.getElementById("urlap").addEventListener("submit", async (e) => {
         },
         body: JSON.stringify(adat)
     };
-    if (nev == "" || arak == "" || leiras == "" ) {
-        alert("Töltse ki az összes mezőt")
-        helyes = false
-    }
+
     try{
         const szervervalasz = await fetch("https://dummyjson.com/products/add", csomag);
         const eredmeny = szervervalasz.json()
-        if (helyes == true) {
+        if (szervervalasz.ok) {
             console.log(nev,arak,leiras, kep)
             alert("Sikeresen rögzítette a terméket")
         }
@@ -43,3 +39,4 @@ document.getElementById("urlap").addEventListener("submit", async (e) => {
     }
 
 })
+
