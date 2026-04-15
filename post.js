@@ -1,7 +1,6 @@
 
 document.getElementById("product-form").addEventListener("submit", async (e) => {
     e.preventDefault()
-    let helyes = true
     const nev = document.getElementById("nev").value
     const arak = document.getElementById("ar").value
     const leiras = document.getElementById("leiras").value
