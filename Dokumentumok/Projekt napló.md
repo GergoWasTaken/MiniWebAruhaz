@@ -27,11 +27,11 @@ Daily standup (04.14):
 
 Daily standup (04.15):
 - N.Domi: Mit fogok csinálni? Sötét téma megjelenítése
-- N.Domi: Mit csináltam? 
-- N.Domi: Mi akadályozott? 
+- N.Domi: Mit csináltam? Megcsináltam a sötét téma megjelenítését
+- N.Domi: Mi akadályozott? Semmi.
 - Cs.Levi: Mit fogok csinálni? Módosítás funkció JS elkezdése
-- Cs.Levi: Mit csináltam? 
-- Cs.Levi: Mi akadályozott?
+- Cs.Levi: Mit csináltam? Elkezdtem a módosítás funkció JS-t
+- Cs.Levi: Mi akadályozott? A módosítás gombnak a meghívása akadályozott.
 - M.Geri: Mit fogok csinálni? Kosár funkció JS elkezdése
-- M.Geri: Mit csináltam? 
-- M.Geri: Mi akadályozott?
+- M.Geri: Mit csináltam? A kosár funkciót megcsináltam
+- M.Geri: Mi akadályozott? Semmi.

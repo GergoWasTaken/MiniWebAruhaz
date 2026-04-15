@@ -123,7 +123,8 @@ footer .szin {
     }
 
     #termek_hozzaadas, 
-    #edit-form button {
+    #edit-form button,
+    .termekek p {
         border-color: #39FF14 !important;
         color: #39FF14 !important;
     }
