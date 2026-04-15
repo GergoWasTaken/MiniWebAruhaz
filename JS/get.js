@@ -39,6 +39,11 @@ function renderProducts(products) {
                                 Kosárba
                             </button>
                         </div>
+                        <div class="mt-auto pt-2">
+                            <button class="btn btn-outline-primary btn-sm w-100" id="modositas">
+                                Módosítás
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
