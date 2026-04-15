@@ -16,7 +16,7 @@ Daily standup (04.13):
 
 Daily standup (04.14):
 - N.Domi: Mit fogok csinálni? HTML stilusok elkezdese és html oldal alap felépítését befejezése
-- N.Domi: Mit fogok csinálni? HTML stilusokat elkezdtem és a html oldal alap felépítését befejeztem
+- N.Domi: Mit csináltam? HTML stilusokat elkezdtem és a html oldal alap felépítését befejeztem
 - N.Domi: Mi akadályozott? Github mergelés.
 - Cs.Levi: Mit fogok csinálni? Uj termek letrehozas JS befejezese
 - Cs.Levi: Mit csináltam? Uj termek letrehozas JS-t befejeztem
@@ -24,3 +24,14 @@ Daily standup (04.14):
 - M.Geri: Mit fogok csinálni? Termekek megjelenitese JS befejezese
 - M.Geri: Mit csináltam? Termekek megjelenitese JS-t befejeztem
 - M.Geri: Mi akadályozott? Github mergelés.
+
+Daily standup (04.15):
+- N.Domi: Mit fogok csinálni? Sötét téma megjelenítése
+- N.Domi: Mit csináltam? 
+- N.Domi: Mi akadályozott? 
+- Cs.Levi: Mit fogok csinálni? Módosítás funkció JS elkezdése
+- Cs.Levi: Mit csináltam? 
+- Cs.Levi: Mi akadályozott?
+- M.Geri: Mit fogok csinálni? Kosár funkció JS elkezdése
+- M.Geri: Mit csináltam? 
+- M.Geri: Mi akadályozott?

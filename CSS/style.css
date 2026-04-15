@@ -1,3 +1,9 @@
+body {
+    background-color: #ffffff;
+    color: #212529;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .card-img-top {
     height: 200px;
     object-fit: cover;
@@ -25,9 +31,7 @@
 }
 
 header {
-    position: fixed;
     z-index: 1030;
-    width: 100%;
 }
 
 .sticky-top {
@@ -48,37 +52,7 @@ footer .szin {
     color: #0d6efd !important; 
 }
 
-#hozzaadas {
-    display: none;
-}
 
-#termek_hozzaadas:hover {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
-}
-
-#termek_hozzaadas:active {
-    background-color: #0a58ca;
-    border-color: #084298;
-}
-
-#vissza_termekekhez {
-    display: none;
-}
-
-#vissza_termekekhez:hover {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
-}
-
-#vissza_termekekhez:active {
-    background-color: #0a58ca;
-    border-color: #084298;
-}
-
-.termekek {
-    display: block;
-}
 
 @media (max-width: 576px) {
     #product-list > div {
@@ -103,4 +77,79 @@ footer .szin {
     #product-list > div {
         width: 25%;
     }
+}
+
+[data-bs-theme="dark"] body {
+    background-color: #121212; 
+    color: #f8f9fa;           
+}
+
+[data-bs-theme="dark"] .bg-light {
+    background-color: #1e1e1e !important;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+[data-bs-theme="dark"] #add-product .shadow-sm {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+}
+
+[data-bs-theme="dark"] {
+
+    .card-text.fw-bold, 
+    .text-primary, 
+    #edit-price {
+        color: #39FF14 !important;
+    }
+
+    .btn-primary, 
+    .btn-success {
+        background-color: transparent !important;
+        border-color: #39FF14 !important;
+        color: #39FF14 !important;
+        box-shadow: 0 0 5px #39FF14;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover, 
+    .btn-success:hover {
+        background-color: #39FF14 !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px #39FF14;
+    }
+
+    #termek_hozzaadas, 
+    #edit-form button {
+        border-color: #39FF14 !important;
+        color: #39FF14 !important;
+    }
+}
+
+[data-bs-theme="dark"] .card {
+    border: 1px solid rgba(57, 255, 20, 0.2);
+}
+
+[data-bs-theme="dark"] .card .btn {
+    background-color: transparent !important;
+    border: 2px solid #39FF14 !important;
+    color: #39FF14 !important;
+    box-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+[data-bs-theme="dark"] .card .btn:hover {
+    background-color: #39FF14 !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px #39FF14;
+    transform: scale(1.05);
+}
+
+[data-bs-theme="dark"] .card-text.fw-bold, 
+[data-bs-theme="dark"] .card .text-primary {
+    color: #39FF14 !important;
 }
