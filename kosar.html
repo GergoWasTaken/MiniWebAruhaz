@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kosár - Mini Webáruház</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <h1 class="mb-4">Kosarad tartalma</h1>
+    
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Termék</th>
+                                    <th>Ár</th>
+                                    <th>Mennyiség</th>
+                                    <th>Összesen</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="kosar-elemek">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html" class="btn btn-link mt-3 p-0 text-decoration-none">
+                <i class="bi bi-arrow-left"></i> Vissza a vásárláshoz
+            </a>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">Rendelés összesítése</h5>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Részösszeg</span>
+                        <span id="reszosszeg">0 Ft</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Szállítás</span>
+                        <span class="text-success">Ingyenes</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-4">
+                        <strong class="h5">Végösszeg</strong>
+                        <strong class="h5" id="vegosszeg">0 Ft</strong>
+                    </div>
+                    <button class="btn btn-primary w-100 btn-lg" id="fizetes-gomb">Tovább a pénztárhoz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="JS/kosar.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "mini-webaruhaz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GergoWasTaken/MiniWebAruhaz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GergoWasTaken/MiniWebAruhaz/issues"
+  },
+  "homepage": "https://github.com/GergoWasTaken/MiniWebAruhaz#readme",
+  "dependencies": {
+    "jest": "^30.3.0"
+  }
+}
