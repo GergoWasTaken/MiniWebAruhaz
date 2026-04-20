@@ -1,4 +1,4 @@
-const kosarUtils = require('JS/kosar.js');
+const kosarUtils = require('./kosar.js');
 
 describe('Kosár funkciók alapos tesztelése ($)', () => {
 
