@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini WebÁruház - Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div id="admin-lista-nezet">
+        <header class="bg-dark text-white py-3">
+            <div class="container d-flex align-items-center justify-content-between flex-wrap">
+                <p class="mb-0 fw-bold">Mini Webáruház - Admin</p>
+                
+                <div class="Hamburger" id="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <div class="mode-switch">
+                        <img src="Images/moon.jpg" id="sotet" class="theme-icon moon" alt="Sötét mód">
+                        <img src="Images/sun.jpg" id="vilagos" class="theme-icon sun" alt="Világos mód">
+                    </div>
+                    <a href="index.html">
+                        <img src="Images/home.jpg" alt="Főoldal" class="img-fluid" style="max-height:40px;">
+                    </a>
+                    <a href="kosar.html">
+                        <img src="Images/kosar.jpg" alt="Kosár" class="img-fluid" style="max-height:40px;">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container py-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Adminisztráció</h1>
+                <button class="btn btn-primary" id="termek_hozzaadas">Új termék felvétele</button>
+            </div>
+            
+            <div id="product-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <div class="text-center w-100">
+                    <div class="spinner-border text-primary" role="status"></div>
+                    <p>Termékek betöltése...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container py-5" id="admin-urlap-nezet" style="display: none;">
+        <section id="add-product" class="mb-5">
+            <div class="shadow-sm p-4 border rounded">
+                <h2 class="h4 mb-3" id="form-cim">Új termék létrehozása</h2>
+                <form id="product-form" class="row g-3">
+                    <input type="hidden" id="edit-id"> <div class="col-md-6">
+                        <label for="nev" class="form-label">Termék neve:</label>
+                        <input type="text" id="nev" class="form-control" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="ar" class="form-label">Ár:</label>
+                        <input type="number" class="form-control" id="ar" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="kep" class="form-label">Kép URL:</label>
+                        <input type="url" class="form-control" id="kep" placeholder="https://..." required>
+                    </div>
+                    <div class="col-12">
+                        <label for="leiras" class="form-label">Leírás:</label>
+                        <textarea class="form-control" id="leiras" rows="2" required></textarea>
+                    </div>
+                    <div class="col-12 d-flex gap-2">
+                        <button type="submit" class="btn btn-success" id="save-btn">Mentés</button>
+                        <button type="button" class="btn btn-secondary" id="vissza_a_listahoz">Mégse / Vissza</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-5 mt-auto border-top">
+        <div class="container text-center">
+            <p class="mb-0 small text-secondary">&copy; 2026 Mini Webáruház</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/hamburger.js"></script>
+    <script src="JS/get.js"></script>
+    <script src="JS/put.js"></script>
+</body>
+</html>
