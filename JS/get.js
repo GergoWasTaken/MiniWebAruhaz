@@ -33,7 +33,7 @@ function renderProducts(products) {
                         </p>
                                 
                         <div class="mt-auto">
-                            <p class="fw-bold mb-2 text-primary">${product.price} $</p>
+                            <p class="fw-bold mb-2 text-primary" id="ara">${product.price} $</p>
                                     
                             <button class="btn btn-outline-primary btn-sm w-100" onclick="alert('${product.title} a kosárba került!')">
                                 Kosárba
