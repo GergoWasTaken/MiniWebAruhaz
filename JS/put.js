@@ -19,5 +19,16 @@ document.getElementById('product-form')?.addEventListener('submit', function (e)
             alert(`Sikeres módosítás: ${res.title}`);
             location.reload();
         });
+    } else {
+        fetch('https://dummyjson.com/products/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(res => {
+            alert(`Sikeres hozzáadás: ${res.title}`);
+            location.reload();
+        });
     }
 });
