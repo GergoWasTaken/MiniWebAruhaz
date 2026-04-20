@@ -1,5 +1,3 @@
-const API_URL = 'https://dummyjson.com/products';
-
 window.termekModositasa = function(id, title, price, thumbnail, description) {
     const listaNezet = document.getElementById('admin-lista-nezet');
     const urlapNezet = document.getElementById('admin-urlap-nezet');
@@ -10,62 +8,24 @@ window.termekModositasa = function(id, title, price, thumbnail, description) {
 
         document.getElementById('form-cim').innerText = "Termék szerkesztése";
         document.getElementById('edit-id').value = id;
+
         document.getElementById('nev').value = title;
         document.getElementById('ar').value = price;
         document.getElementById('kep').value = thumbnail;
         document.getElementById('leiras').value = description;
         
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 };
 
-async function getProducts() {
-    try {
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        renderProducts(data.products);
-    } catch (error) {
-        console.error('Hiba a lekérés során:', error);
-        const list = document.getElementById('product-list');
-        if (list) {
-            list.innerHTML = `<p class="alert alert-danger text-center w-100">Hiba történt a termékek betöltésekor!</p>`;
-        }
+window.kosarbaRak = function(id, nev, ar, kep) {
+    let kosar = JSON.parse(localStorage.getItem('webshop_kosar')) || [];
+    const index = kosar.findIndex(item => item.id === id);
+    if (index !== -1) {
+        kosar[index].mennyiseg += 1;
+    } else {
+        kosar.push({ id, nev, ar, kep, mennyiseg: 1 });
     }
-}
-
-function renderProducts(products) {
-    const container = document.getElementById('product-list');
-    if (!container) return;
-    
-    container.innerHTML = '';
-
-    products.forEach(product => {
-        const safeTitle = product.title.replace(/'/g, "\\'");
-        const safeDesc = product.description.replace(/'/g, "\\'");
-
-        const cardHtml = `
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="${product.thumbnail}" class="card-img-top" alt="${product.title}">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title h6">${product.title}</h5>
-                        <p class="card-text small text-muted">
-                            ${product.description.substring(0, 60)}...
-                        </p>
-                        <div class="mt-auto">
-                            <p class="fw-bold mb-2 text-primary">$${product.price}</p>
-                            
-                            <button class="btn btn-warning btn-sm w-100" 
-                                onclick="termekModositasa(${product.id}, '${safeTitle}', ${product.price}, '${product.thumbnail}', '${safeDesc}')">
-                                <i class="bi bi-pencil"></i> Módosítás
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-        container.innerHTML += cardHtml;
-    });
-}
-
-getProducts();
+    localStorage.setItem('webshop_kosar', JSON.stringify(kosar));
+    alert(`${nev} hozzáadva!`);
+};
