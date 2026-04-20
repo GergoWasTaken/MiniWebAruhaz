@@ -1,37 +1,21 @@
 const API_URL = 'https://dummyjson.com/products';
 
-// Kosárba rakás (Főoldalhoz)
-window.kosarbaRak = function(id, nev, ar, kep) {
-    let kosar = JSON.parse(localStorage.getItem('webshop_kosar')) || [];
-    const index = kosar.findIndex(item => item.id === id);
-
-    if (index !== -1) {
-        kosar[index].mennyiseg += 1;
-    } else {
-        kosar.push({ id, nev, ar, kep, mennyiseg: 1 });
-    }
-
-    localStorage.setItem('webshop_kosar', JSON.stringify(kosar));
-    alert(`${nev} hozzáadva a kosárhoz!`);
-};
-
-// MÓDOSÍTÁS megnyitása (Admin oldalhoz)
 window.termekModositasa = function(id, title, price, thumbnail, description) {
     const listaNezet = document.getElementById('admin-lista-nezet');
     const urlapNezet = document.getElementById('admin-urlap-nezet');
     
     if (listaNezet && urlapNezet) {
-        // Nézet váltása
         listaNezet.style.display = 'none';
         urlapNezet.style.display = 'block';
 
-        // Űrlap kitöltése
         document.getElementById('form-cim').innerText = "Termék szerkesztése";
         document.getElementById('edit-id').value = id;
         document.getElementById('nev').value = title;
         document.getElementById('ar').value = price;
         document.getElementById('kep').value = thumbnail;
         document.getElementById('leiras').value = description;
+        
+        window.scrollTo(0, 0);
     }
 };
 
@@ -44,7 +28,7 @@ async function getProducts() {
         console.error('Hiba a lekérés során:', error);
         const list = document.getElementById('product-list');
         if (list) {
-            list.innerHTML = `<p class="alert alert-danger text-center w-100">Hiba történt!</p>`;
+            list.innerHTML = `<p class="alert alert-danger text-center w-100">Hiba történt a termékek betöltésekor!</p>`;
         }
     }
 }
@@ -55,28 +39,9 @@ function renderProducts(products) {
     
     container.innerHTML = '';
 
-    // Megnézzük, hogy az admin oldalon vagyunk-e
-    const isAdminPage = window.location.pathname.includes('admin.html');
-
     products.forEach(product => {
         const safeTitle = product.title.replace(/'/g, "\\'");
         const safeDesc = product.description.replace(/'/g, "\\'");
-        
-        // Gomb meghatározása: Adminon "Módosítás", Főoldalon "Kosárba"
-        let actionButton = "";
-        if (isAdminPage) {
-            actionButton = `
-                <button class="btn btn-warning btn-sm w-100" 
-                    onclick="termekModositasa(${product.id}, '${safeTitle}', ${product.price}, '${product.thumbnail}', '${safeDesc}')">
-                    Módosítás
-                </button>`;
-        } else {
-            actionButton = `
-                <button class="btn btn-primary btn-sm w-100" 
-                    onclick="kosarbaRak(${product.id}, '${safeTitle}', ${product.price}, '${product.thumbnail}')">
-                    Kosárba
-                </button>`;
-        }
 
         const cardHtml = `
             <div class="col">
@@ -89,11 +54,16 @@ function renderProducts(products) {
                         </p>
                         <div class="mt-auto">
                             <p class="fw-bold mb-2 text-primary">$${product.price}</p>
-                            ${actionButton}
+                            
+                            <button class="btn btn-warning btn-sm w-100" 
+                                onclick="termekModositasa(${product.id}, '${safeTitle}', ${product.price}, '${product.thumbnail}', '${safeDesc}')">
+                                <i class="bi bi-pencil"></i> Módosítás
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>`;
+            </div>
+        `;
         container.innerHTML += cardHtml;
     });
 }

@@ -10,19 +10,33 @@
 <body>
     <div class="termekek">
         <header class="bg-dark text-white py-3">
-            <div class="container d-flex align-items-center justify-content-between">
-                <p class="mb-0">Mini Webáruház</p>
-                <div>
-                    <button id="sotet" class="btn btn-outline-light btn-sm me-3">Dark</button>
-                    <img src="Images/kosar.jpg" alt="Kosár" class="img-fluid" style="max-height:40px;">
+            <div class="container d-flex align-items-center justify-content-between flex-wrap">
+                <p class="mb-0 fw-bold">Mini Webáruház - Főoldal</p>
+                
+                <div class="Hamburger" id="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <div class="mode-switch">
+                        <img src="Images/moon.jpg" id="sotet" class="theme-icon moon" alt="Sötét mód">
+                        <img src="Images/sun.jpg" id="vilagos" class="theme-icon sun" alt="Világos mód">
+                    </div>
+                    <a href="admin.html">
+                        <img src="Images/admin-panel.jpg" alt="Admin panel" class="img-fluid" style="max-height:40px;">
+                    </a>
+                    <a href="kosar.html">
+                        <img src="Images/kosar.jpg" alt="Kosár" class="img-fluid" style="max-height:40px;">
+                    </a>
                 </div>
             </div>
         </header>
+
         <div class="container py-5">
-            <p></p>
-            <div>
-                <h1 class="mb-4 text-center">Termékek</h1>
-            </div>
+            <h1 class="mb-4 text-center">Termékek</h1>
+            
             <div id="product-list" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
                 <div class="text-center w-100">
                     <div class="spinner-border text-primary" role="status"></div>
@@ -31,110 +45,36 @@
             </div>
         </div>
     </div>
-    
-    <main class="container" id="hozzaadas">
-        <section id="add-product" class="mb-5">
-            <div class="shadow-sm">
-                <h2 class="h4 mb-3">Új termék létrehozása</h2>
-                <form id="product-form" class="row g-3">
-                    <div class="col-md-6">
-                        <label for="nev" class="form-label">Termék neve: </label>
-                        <input type="text" id="nev" class="form-control" required>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="ar" class="form-label">Ár: </label>
-                        <input type="number" class="form-control" id="ar" required>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="kep" class="form-label">Kép: </label>
-                        <input type="url" class="form-control" id="kep" placeholder="https://..." required>
-                    </div>
-                    <div class="col-12">
-                        <label for="leiras" class="form-label">Leírás: </label>
-                        <textarea class="form-control" id="leiras" rows="2" required></textarea>
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-success">Termék hozzáadása</button>
-                    </div>
-                </form>
-            </div>
-        </section>
 
-        <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <form id="edit-form">
-                            <input type="hidden" id="edit-id">
-                            <div class="mb-3">
-                                <label for="edit-price" class="form-label">Új ár: </label>
-                                <input type="number" class="form-control" id="edit-price" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Mentés</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <div class="container" id="termek_hozzaadas_div">
-        <button type="button" class="btn btn-primary" id="termek_hozzaadas">
-            Termék hozzáadása
-        </button>
-    </div>
-
-    <div class="container mb-4 text-center text-md-start">
-        <div class="d-grid d-md-inline-block">
-            <button type="button" class="btn btn-primary" id="vissza_termekekhez">
-                Vissza a termékekhez
-            </button>
-        </div>
-    </div>
-
-    <footer class="bg-dark text-white py-5 mt-5 border-top">
+    <footer class="bg-dark text-white py-5 mt-auto border-top">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4 mb-md-0 text-center">
-                    <h5 class="mb-3">Kapcsolat</h5>
-                    <ul class="lista">
-                        <li class="mb-2">
-                            <i class="szin"></i> Szolnok, Áchim András utca 12-14
-                        </li>
-                        <li class="mb-2">
-                            <i class="szin"></i> Szolnoki SZC Kreatív Technikum és Szakképző Iskola
-                        </li>
-                        <li class="mb-2">
-                            <i class="szin"></i> +36 30 123 4567
-                        </li>
-                        <li class="mb-2">
-                            <i class="szin"></i> info@miniwebaruhaz.hu
-                        </li>
+                    <h5 class="mb-3 text-primary">Kapcsolat</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Szolnok, Áchim András utca 12-14</li>
+                        <li class="mb-2">Szolnoki SZC Kreatív Technikum</li>
+                        <li class="mb-2">+36 30 123 4567</li>
+                        <li class="mb-2 text-primary">info@miniwebaruhaz.hu</li>
                     </ul>
                 </div>
-
                 <div class="col-md-6 text-center">
-                    <h5 class="mb-3">Rendelés</h5>
+                    <h5 class="mb-3 text-primary">Rendelés</h5>
                     <p class="mb-1">Hétfő - Péntek: 06:00 - 21:00</p>
                     <p>Hétvégén: 08:00 - 18:00</p>
                 </div>
             </div>
-            
             <hr class="my-4 bg-secondary">
-    <footer class="bg-dark py-4 mt-5 border-top">
-        <div class="container text-center text-primary">
-            
-            <div class="text-center small">
+            <div class="text-center small text-secondary">
                 <p class="mb-0">&copy; 2026 Mini Webáruház</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/hamburger.js"></script>
     <script src="JS/get.js"></script>
     <script src="JS/post.js"></script>
     <script src="JS/termek.js"></script>
-    <script src="JS/put.js"></script>
 </body>
 </html>

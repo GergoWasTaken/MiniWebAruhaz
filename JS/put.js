@@ -1,20 +1,53 @@
-document.getElementById('product-list').addEventListener('click', function(e) {
-    if (e.target && e.target.id.startsWith('modositas-')) {
-        
-        const productId = e.target.id.split('-')[1];
-        
-        console.log("Módosítani akarod a terméket, aminek az ID-ja:", productId);
-        
-        megnyitModositasModalt(productId);
+document.getElementById('product-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const id = document.getElementById('edit-id').value;
+    const productData = {
+        title: document.getElementById('nev').value,
+        price: parseFloat(document.getElementById('ar').value),
+        description: document.getElementById('leiras').value,
+        thumbnail: document.getElementById('kep').value
+    };
+
+    if (id) {
+        updateProduct(id, productData);
+    } else {
+        console.log("Új termék felvétele funkció (POST)...");
     }
 });
 
-function termekModositasa(id) {
-    console.log("Szerkesztés indítása az ID alapján:", id);
+function updateProduct(id, data) {
+    fetch(`https://dummyjson.com/products/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(res => {
+        if (!res.ok) throw new Error("Hiba a módosítás során!");
+        return res.json();
+    })
+    .then(updatedProduct => {
+        console.log("Sikeres módosítás:", updatedProduct);
+        alert(`A(z) ${updatedProduct.title} termék sikeresen frissítve!`);
+
+        document.getElementById('admin-urlap-nezet').style.display = 'none';
+        document.getElementById('admin-lista-nezet').style.display = 'block';
+        
+    })
+    .catch(err => {
+        console.error("Hiba:", err);
+        alert("Nem sikerült a módosítás!");
+    });
+}
+
+function fillFormForEdit(product) {
+    document.getElementById('admin-lista-nezet').style.display = 'none';
+    document.getElementById('admin-urlap-nezet').style.display = 'block';
     
-    const modal = new bootstrap.Modal(document.getElementById('editModal'));
-    
-    document.getElementById('edit-id').value = id;
-    
-    modal.show();
+    document.getElementById('form-cim').innerText = "Termék szerkesztése";
+    document.getElementById('edit-id').value = product.id;
+    document.getElementById('nev').value = product.title;
+    document.getElementById('ar').value = product.price;
+    document.getElementById('kep').value = product.thumbnail;
+    document.getElementById('leiras').value = product.description;
 }

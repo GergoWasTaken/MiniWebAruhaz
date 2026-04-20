@@ -2,12 +2,53 @@ body {
     background-color: #ffffff;
     color: #212529;
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
-    background-color: #f8f9fa;
+header {
+    z-index: 1030;
+    position: relative;
+}
+
+header a {
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+header img {
+    vertical-align: middle;
+}
+
+main {
+    flex: 1;
+}
+
+.theme-icon {
+    max-height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.theme-icon:hover {
+    transform: scale(1.1);
+}
+
+.sun {
+    display: none;
+}
+
+.moon {
+    display: block;
+}
+
+[data-bs-theme="dark"] .moon {
+    display: none;
+}
+
+[data-bs-theme="dark"] .sun {
+    display: block;
 }
 
 .card {
@@ -20,6 +61,12 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    background-color: #f8f9fa;
+}
+
 .description-text {
     height: 60px;
     overflow: hidden;
@@ -30,149 +77,96 @@ body {
     font-size: 0.9rem;
 }
 
-main {
-    margin-top: 80px; 
-    margin-bottom: 80px; 
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-header {
-    z-index: 1030;
+#hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 5px;
 }
 
-.sticky-top {
-    z-index: 1020;
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
 }
 
-footer {
-    width: 100%;
-    margin-top: auto; 
-}
-
-footer .lista li {
-    font-size: 0.95rem;
-    color: #adb5bd; 
-}
-
-footer .szin {
-    color: #0d6efd !important; 
-}
-
-
-
-@media (max-width: 576px) {
-    #product-list > div {
-        width: 100%;
+@media (max-width: 768px) {
+    #hamburger {
+        display: block;
+        z-index: 1040;
     }
 
-    #termek_hozzaadas_div {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        position: absolute;
+        top: 65px;
+        right: 15px;
+        background-color: rgba(33, 37, 41, 0.98);
+        padding: 20px;
+        border-radius: 12px;
+        z-index: 1035;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 20px;
+    }
+
+    .nav-menu.active {
         display: flex;
-        justify-content: center;
-    }
-}
-
-@media (min-width: 577px) and (max-width: 768px) {
-    #product-list > div {
-        width: 50%;
-    }
-    
-    #termek_hozzaadas_div {
-        display: flex;
-        justify-content: center;
-
-    }
-}
-
-
-@media (min-width: 769px) and (max-width: 992px) {
-    #product-list > div {
-        width: 33.333%;
     }
 
-    #termek_hozzaadas_div {
-        display: flex;
-        justify-content: center;
-        width: 500px;
-    }
-}
-
-@media (min-width: 993px) {
-    #product-list > div {
-        width: 25%;
-    }
+    #hamburger.open .line:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+    #hamburger.open .line:nth-child(2) { opacity: 0; }
+    #hamburger.open .line:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
 }
 
 [data-bs-theme="dark"] body {
-    background-color: #121212; 
-    color: #f8f9fa;           
-}
-
-[data-bs-theme="dark"] .bg-light {
-    background-color: #1e1e1e !important;
+    background-color: #121212;
+    color: #f8f9fa;
 }
 
 [data-bs-theme="dark"] .card {
     background-color: #1e1e1e;
-    border-color: #333;
-}
-
-[data-bs-theme="dark"] #add-product .shadow-sm {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-}
-
-[data-bs-theme="dark"] {
-
-    .card-text.fw-bold, 
-    .text-primary, 
-    #edit-price {
-        color: #39FF14 !important;
-    }
-
-    .btn-primary, 
-    .btn-success {
-        background-color: transparent !important;
-        border-color: #39FF14 !important;
-        color: #39FF14 !important;
-        box-shadow: 0 0 5px #39FF14;
-        transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover, 
-    .btn-success:hover {
-        background-color: #39FF14 !important;
-        color: #000 !important;
-        box-shadow: 0 0 15px #39FF14;
-    }
-
-    #termek_hozzaadas, 
-    #edit-form button,
-    .termekek p {
-        border-color: #39FF14 !important;
-        color: #39FF14 !important;
-    }
-}
-
-[data-bs-theme="dark"] .card {
     border: 1px solid rgba(57, 255, 20, 0.2);
 }
 
+[data-bs-theme="dark"] h1, 
+[data-bs-theme="dark"] h2,
+[data-bs-theme="dark"] .card-text.fw-bold,
+[data-bs-theme="dark"] .text-primary {
+    color: #39FF14 !important;
+}
+
+[data-bs-theme="dark"] .btn-primary, 
+[data-bs-theme="dark"] .btn-success,
 [data-bs-theme="dark"] .card .btn {
     background-color: transparent !important;
     border: 2px solid #39FF14 !important;
     color: #39FF14 !important;
-    box-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+    box-shadow: 0 0 5px rgba(57, 255, 20, 0.2);
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
 }
 
+[data-bs-theme="dark"] .btn-primary:hover,
+[data-bs-theme="dark"] .btn-success:hover,
 [data-bs-theme="dark"] .card .btn:hover {
     background-color: #39FF14 !important;
     color: #000 !important;
-    box-shadow: 0 0 20px #39FF14;
-    transform: scale(1.05);
+    box-shadow: 0 0 15px #39FF14;
 }
 
-[data-bs-theme="dark"] .card-text.fw-bold, 
-[data-bs-theme="dark"] .card .text-primary {
-    color: #39FF14 !important;
+footer {
+    width: 100%;
+}
+
+footer .list-unstyled li {
+    font-size: 0.9rem;
+    color: #adb5bd;
 }
