@@ -1,6 +1,5 @@
 const API_URL = 'https://dummyjson.com/products';
 
-// Kosárba rakás (Főoldalhoz)
 window.kosarbaRak = function(id, nev, ar, kep) {
     let kosar = JSON.parse(localStorage.getItem('webshop_kosar')) || [];
     const index = kosar.findIndex(item => item.id === id);
@@ -15,17 +14,14 @@ window.kosarbaRak = function(id, nev, ar, kep) {
     alert(`${nev} hozzáadva a kosárhoz!`);
 };
 
-// MÓDOSÍTÁS megnyitása (Admin oldalhoz)
 window.termekModositasa = function(id, title, price, thumbnail, description) {
     const listaNezet = document.getElementById('admin-lista-nezet');
     const urlapNezet = document.getElementById('admin-urlap-nezet');
     
     if (listaNezet && urlapNezet) {
-        // Nézet váltása
         listaNezet.style.display = 'none';
         urlapNezet.style.display = 'block';
 
-        // Űrlap kitöltése
         document.getElementById('form-cim').innerText = "Termék szerkesztése";
         document.getElementById('edit-id').value = id;
         document.getElementById('nev').value = title;
@@ -55,14 +51,12 @@ function renderProducts(products) {
     
     container.innerHTML = '';
 
-    // Megnézzük, hogy az admin oldalon vagyunk-e
     const isAdminPage = window.location.pathname.includes('admin.html');
 
     products.forEach(product => {
         const safeTitle = product.title.replace(/'/g, "\\'");
         const safeDesc = product.description.replace(/'/g, "\\'");
         
-        // Gomb meghatározása: Adminon "Módosítás", Főoldalon "Kosárba"
         let actionButton = "";
         if (isAdminPage) {
             actionButton = `
