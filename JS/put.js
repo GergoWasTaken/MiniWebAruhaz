@@ -1,41 +1,53 @@
-document.getElementById("product-list").addEventListener("submit", async (event) => {
-    event.preventDefault();
+document.getElementById('product-form').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-    const adatok = adatKiolvasas();
+    const id = document.getElementById('edit-id').value;
+    const productData = {
+        title: document.getElementById('nev').value,
+        price: parseFloat(document.getElementById('ar').value),
+        description: document.getElementById('leiras').value,
+        thumbnail: document.getElementById('kep').value
+    };
 
-    try {
-        await putHivas(adatok);
-        megjelenit("Sikerült a mentés!");
-    } catch (hiba) {
-        megjelenit("Hiba: " + hiba.message);
+    if (id) {
+        updateProduct(id, productData);
+    } else {
+        console.log("Új termék felvétele funkció (POST)...");
     }
 });
 
-function adatKiolvasas() {
-    return {
-        name: document.getElementById("nev").value,
-        row: parseInt(document.getElementById("row").value),
-        column: parseInt(document.getElementById("column").value),
-        active: document.getElementById("active").checked
-    };
+function updateProduct(id, data) {
+    fetch(`https://dummyjson.com/products/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+    .then(res => {
+        if (!res.ok) throw new Error("Hiba a módosítás során!");
+        return res.json();
+    })
+    .then(updatedProduct => {
+        console.log("Sikeres módosítás:", updatedProduct);
+        alert(`A(z) ${updatedProduct.title} termék sikeresen frissítve!`);
+
+        document.getElementById('admin-urlap-nezet').style.display = 'none';
+        document.getElementById('admin-lista-nezet').style.display = 'block';
+        
+    })
+    .catch(err => {
+        console.error("Hiba:", err);
+        alert("Nem sikerült a módosítás!");
+    });
 }
 
-async function putHivas(adat) {
-    const id = 1;
-
-    const csomag = {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(adat)
-    };
-
-    const valasz = await fetch(`https://dummyjson.com/products/${id}`, csomag);
-
-    if (!valasz.ok) {
-        throw new Error("Szerver hiba történt");
-    }
-
-    const keszadat = await valasz.json();
-    console.log("Szerver:", keszadat);
+function fillFormForEdit(product) {
+    document.getElementById('admin-lista-nezet').style.display = 'none';
+    document.getElementById('admin-urlap-nezet').style.display = 'block';
+    
+    document.getElementById('form-cim').innerText = "Termék szerkesztése";
+    document.getElementById('edit-id').value = product.id;
+    document.getElementById('nev').value = product.title;
+    document.getElementById('ar').value = product.price;
+    document.getElementById('kep').value = product.thumbnail;
+    document.getElementById('leiras').value = product.description;
 }
-
