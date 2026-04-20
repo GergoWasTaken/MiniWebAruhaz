@@ -30,6 +30,11 @@ body {
     font-size: 0.9rem;
 }
 
+main {
+    margin-top: 80px; 
+    margin-bottom: 80px; 
+}
+
 header {
     z-index: 1030;
 }
@@ -58,11 +63,22 @@ footer .szin {
     #product-list > div {
         width: 100%;
     }
+
+    #termek_hozzaadas_div {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
     #product-list > div {
         width: 50%;
+    }
+    
+    #termek_hozzaadas_div {
+        display: flex;
+        justify-content: center;
+
     }
 }
 
@@ -70,6 +86,12 @@ footer .szin {
 @media (min-width: 769px) and (max-width: 992px) {
     #product-list > div {
         width: 33.333%;
+    }
+
+    #termek_hozzaadas_div {
+        display: flex;
+        justify-content: center;
+        width: 500px;
     }
 }
 
