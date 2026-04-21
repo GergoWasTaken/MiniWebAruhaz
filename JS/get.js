@@ -12,7 +12,52 @@ window.kosarbaRak = function(id, nev, ar, kep) {
     }
 
     localStorage.setItem('webshop_kosar', JSON.stringify(kosar));
-    alert(`${nev} hozzáadva a kosárhoz!`);
+    function fancyAlert(msg, duration = 3000) {
+        if (!document.getElementById('fancy-alert-style')) {
+            const style = document.createElement('style');
+            style.id = 'fancy-alert-style';
+            style.innerHTML = `
+                @keyframes fadeInOut {
+                    0% { opacity: 0; transform: translate(-50%, -60%); }
+                    10% { opacity: 1; transform: translate(-50%, -50%); }
+                    90% { opacity: 1; transform: translate(-50%, -50%); }
+                    100% { opacity: 0; transform: translate(-50%, -40%); }
+                }
+                .custom-alert {
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(255, 255, 255, 0.95);
+                    color: #333;
+                    padding: 20px 40px;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+                    font-family: 'Segoe UI', Roboto, sans-serif;
+                    font-weight: 500;
+                    z-index: 10000;
+                    border: 1px solid #eee;
+                    text-align: center;
+                    min-width: 250px;
+                    animation: fadeInOut ${duration}ms ease-in-out forwards;
+                    backdrop-filter: blur(5px);
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        const alertBox = document.createElement("div");
+        alertBox.className = "custom-alert";
+        alertBox.innerHTML = msg;
+        
+        document.body.appendChild(alertBox);
+
+        setTimeout(() => {
+            alertBox.remove();
+        }, duration);
+    }
+
+    fancyAlert("Termék hozzáadva a kosárhoz!");
 };
 
 window.termekModositasa = function(id, title, price, thumbnail, description) {
