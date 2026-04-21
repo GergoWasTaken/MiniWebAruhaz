@@ -31,7 +31,7 @@ describe('Kosár funkciók alapos tesztelése ($)', () => {
             expect(kosarUtils.validalMennyiseg(150)).toBe(false);
         });
 
-        test('Elutasítja a tört számokat (nem vehet valaki 1.5 telefont)', () => {
+        test('Elutasítja a tört számokat (nem vehet valaki 2.5 telefont)', () => {
             expect(kosarUtils.validalMennyiseg(2.5)).toBe(false);
         });
 
