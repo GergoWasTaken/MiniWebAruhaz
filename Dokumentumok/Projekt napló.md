@@ -2,6 +2,7 @@ heti sprint teendok:
 N.Domi (FEJLESZTO) szerepkore: HTML, CSS, BOOTSTRAP
 Cs.Levi (FEJLESZTO) szerepkore: Kosar vegosszeg teszteles, Uj termek letrehozas, Termek modositas
 M.Geri (Scrum Master, FEJLESZTO) szerepkore: Termekek megjelenitese, Kosar funkcio, Kosar vegosszeg szamitasa
+
 Daily standup (04.13):
 - N.Domi: Mit fogok csinálni? Trello kialakitasa, HTML vaz felepitese
 - N.Domi: Mit csináltam? Trello kialakítása sikerült és a html vázát elkezdtem
@@ -13,15 +14,6 @@ Daily standup (04.13):
 - M.Geri: Mit csináltam? Termekek megjelenitese JS elkezdtem, Github összecsatlakoztatás
 - M.Geri: Mi akadályozott? Lassú internet github összeköttetés, saját branchek.
 
-N.Domi: Mit fogok csinálni? Trello kialakitasa, HTML vaz felepitese
-N.Domi: Mit csináltam? Trello kialakítása sikerült és a html vázát elkezdtem
-N.Domi: Mi akadályozott? Az internet kicsit lassú volt.
-Cs.Levi: Mit fogok csinálni? Uj termek letrehozas JS elkezdese
-Cs.Levi: Mit csináltam? Uj termek letrehozas JS elkezdtem
-Cs.Levi: Mi akadályozott? Lassú internet.
-M.Geri: Mit fogok csinálni? Termekek megjelenitese JS elkezdese, Github összecsatlakoztatás
-M.Geri: Mit csináltam? Termekek megjelenitese JS elkezdtem, Github összecsatlakoztatás
-M.Geri: Mi akadályozott? Lassú internet.
 Daily standup (04.14):
 - N.Domi: Mit fogok csinálni? HTML stilusok elkezdese és html oldal alap felépítését befejezése
 - N.Domi: Mit csináltam? HTML stilusokat elkezdtem és a html oldal alap felépítését befejeztem
@@ -54,12 +46,27 @@ Daily standup (04.15):
 - M.Geri (Scrum Master, FEJLESZTO) szerepkore: Módosítás áthelyezése, Hamburger menü, Teljes oldal tesztelése, PPT
 
 Daily standup (04.20):
-- N.Domi: Mit fogok csinálni? Jest tesztelés
-- N.Domi: Mit csináltam? 
+- N.Domi: Mit fogok csinálni? Jest tesztelés és dokumentáció
+- N.Domi: Mit csináltam? Jest teszteket megcsináltam és dokumentáltam.
 - N.Domi: Mi akadályozott? Semmi.
 - Cs.Levi: Mit fogok csinálni? Módosítás funkció JS folytatása
-- Cs.Levi: Mit csináltam? 
-- Cs.Levi: Mi akadályozott? 
-- M.Geri: Mit fogok csinálni? Módosítás oldal (Admin)
-- M.Geri: Mit csináltam? 
+- Cs.Levi: Mit csináltam? Módosítás funkció JS kész
+- Cs.Levi: Mi akadályozott? Semmi.
+- M.Geri: Mit fogok csinálni? Módosítás oldal (Admin) és Hamburger menü
+- M.Geri: Mit csináltam? Módosítás oldal (Admin) és Hamburger menü kész
 - M.Geri: Mi akadályozott? Semmi.
+
+Daily standup (04.21):
+- N.Domi: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
+- N.Domi: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
+- N.Domi: Mi akadályozott? Internet.
+- Cs.Levi: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
+- Cs.Levi: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
+- Cs.Levi: Mi akadályozott? Internet.
+- M.Geri: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
+- M.Geri: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
+- M.Geri: Mi akadályozott? Internet.
+
+
+Mit tud az oldal?
+    Amikor megnyitja oldalunkat egyből bedob a főoldalra ahol a termékeket láthatja. A termékeink az oldalon névvel és leírással megjelennek alattuk meg megjelenik hogy az adott termék mennyibe kerül. Az oldal alján az elérhetőségeink és kapcsolataink jelennek meg a nyitvatartással ami jelzi mikortól meddig lehet rendelni. Ha már tett valamit a kosárba és meg szeretné venni akkor a kosár ikonra rányomva teheti ezt meg. A kosárba még tudja módosítani hogy miből mennyit szeretne venni vagy éppen nem szeretné megvenni. Ha viszont megveszi a terméket amit kosárba rakott akkor menjen tovább a pénztárhoz ahol az oldalunk kérni fogja a kártyája adatait. Oldalunk reszponzív tehát akár telefonról vagy tabletről is meglehet nyitni a webáruházt ha esetleg nincs számítógép eszköze. Van sötét módunk is ha esetleg az komfortosabb valakinek hogy világos helyett sötétben láthatja a képernyőt (A holdra vagy napra rányomva tudja ezt változtatni). Adminisztrációs oldalunkat csak az admin bírja megnyitni és módosítani a termékek árát vagy éppen új terméket felvenni.
