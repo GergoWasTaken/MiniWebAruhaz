@@ -55,3 +55,14 @@ Daily standup (04.20):
 - M.Geri: Mit fogok csinálni? Módosítás oldal (Admin) és Hamburger menü
 - M.Geri: Mit csináltam? Módosítás oldal (Admin) és Hamburger menü kész
 - M.Geri: Mi akadályozott? Semmi.
+
+Daily standup (04.21):
+- N.Domi: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
+- N.Domi: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
+- N.Domi: Mi akadályozott? Semmi.
+- Cs.Levi: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
+- Cs.Levi: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
+- Cs.Levi: Mi akadályozott? Semmi.
+- M.Geri: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
+- M.Geri: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
+- M.Geri: Mi akadályozott? Semmi.
