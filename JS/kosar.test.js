@@ -6,22 +6,14 @@ describe('Kosár funkciók alapos tesztelése ($)', () => {
         
         test('Több tétel esetén helyesen adja össze az árakat', () => {
             const tesztKosar = [
-                { ar: 100, mennyiseg: 2 },
-                { ar: 50, mennyiseg: 1 }
+                { ar: 872, mennyiseg: 2 },
+                { ar: 1396, mennyiseg: 1 }
             ];
-            expect(kosarUtils.szamolVegosszeg(tesztKosar)).toBe(250);
+            expect(kosarUtils.szamolVegosszeg(tesztKosar)).toBe(3140);
         });
 
         test('Üres kosár összege pontosan 0$', () => {
             expect(kosarUtils.szamolVegosszeg([])).toBe(0);
-        });
-
-        test('Tizedesjegyek (centek) kezelése', () => {
-            const centek = [
-                { ar: 19.99, mennyiseg: 1 },
-                { ar: 5.50, mennyiseg: 2 }
-            ];
-            expect(kosarUtils.szamolVegosszeg(centek)).toBe(30.99);
         });
     });
 

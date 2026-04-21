@@ -59,10 +59,14 @@ Daily standup (04.20):
 Daily standup (04.21):
 - N.Domi: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
 - N.Domi: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
-- N.Domi: Mi akadályozott? Semmi.
+- N.Domi: Mi akadályozott? Internet.
 - Cs.Levi: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
 - Cs.Levi: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
-- Cs.Levi: Mi akadályozott? Semmi.
+- Cs.Levi: Mi akadályozott? Internet.
 - M.Geri: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
 - M.Geri: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
-- M.Geri: Mi akadályozott? Semmi.
+- M.Geri: Mi akadályozott? Internet.
+
+
+Mit tud az oldal?
+    Amikor megnyitja oldalunkat egyből bedob a főoldalra ahol a termékeket láthatja. A termékeink az oldalon névvel és leírással megjelennek alattuk meg megjelenik hogy az adott termék mennyibe kerül. Az oldal alján az elérhetőségeink és kapcsolataink jelennek meg a nyitvatartással ami jelzi mikortól meddig lehet rendelni. Ha már tett valamit a kosárba és meg szeretné venni akkor a kosár ikonra rányomva teheti ezt meg. A kosárba még tudja módosítani hogy miből mennyit szeretne venni vagy éppen nem szeretné megvenni. Ha viszont megveszi a terméket amit kosárba rakott akkor menjen tovább a pénztárhoz ahol az oldalunk kérni fogja a kártyája adatait. Oldalunk reszponzív tehát akár telefonról vagy tabletről is meglehet nyitni a webáruházt ha esetleg nincs számítógép eszköze. Van sötét módunk is ha esetleg az komfortosabb valakinek hogy világos helyett sötétben láthatja a képernyőt (A holdra vagy napra rányomva tudja ezt változtatni). Adminisztrációs oldalunkat csak az admin bírja megnyitni és módosítani a termékek árát vagy éppen új terméket felvenni.
