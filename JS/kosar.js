@@ -24,13 +24,11 @@ function frissitKosar() {
     if (reszosszegElem) reszosszegElem.innerText = vegHuf;
     document.getElementById('vegosszeg').innerText = vegHuf;
 
-    // Fizet�s gomb disable, ha �res a kos�r
     const fizetesGomb = document.querySelector('#payment-form button[type="submit"]');
     if (fizetesGomb) {
         fizetesGomb.disabled = kosar.length === 0;
     }
 
-    // �zenet megjelen�t�se, ha �res a kos�r
     const uzenet = document.getElementById('kosar-uzenet');
     if (uzenet) {
         uzenet.style.display = kosar.length === 0 ? 'block' : 'none';
@@ -50,7 +48,7 @@ window.valtoztatMennyiseg = (id, ujMennyiseg) => {
     if (index !== -1) {
         kosar[index].mennyiseg = parseInt(ujMennyiseg);
         if (kosar[index].mennyiseg <= 0) {
-            kosar.splice(index, 1); // Ha 0 vagy kevesebb, t�r�lj�k
+            kosar.splice(index, 1);
         }
         localStorage.setItem('webshop_kosar', JSON.stringify(kosar));
         frissitKosar();
