@@ -1,4 +1,5 @@
 const API_URL = 'https://dummyjson.com/products';
+const ARFOLYAM = 350;
 
 window.kosarbaRak = function(id, nev, ar, kep) {
     let kosar = JSON.parse(localStorage.getItem('webshop_kosar')) || [];
@@ -56,7 +57,16 @@ function renderProducts(products) {
     products.forEach(product => {
         const safeTitle = product.title.replace(/'/g, "\\'");
         const safeDesc = product.description.replace(/'/g, "\\'");
-        
+
+        const forintAr = product.price * ARFOLYAM;
+        let kerekitett;
+        const tizedes = forintAr - Math.floor(forintAr);
+        if (tizedes === 0.5) {
+            kerekitett = Math.floor(forintAr);
+        } else {
+            kerekitett = Math.round(forintAr);
+        }
+
         let actionButton = "";
         if (isAdminPage) {
             actionButton = `
@@ -82,7 +92,7 @@ function renderProducts(products) {
                             ${product.description.substring(0, 60)}...
                         </p>
                         <div class="mt-auto">
-                            <p class="fw-bold mb-2 text-primary">$${product.price}</p>
+                            <p class="fw-bold mb-2 text-primary">${kerekitett} Ft</p>
                             ${actionButton}
                         </div>
                     </div>
