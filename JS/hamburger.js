@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
+    const btnSotet = document.getElementById('sotet');
+    const btnVilagos = document.getElementById('vilagos');
+    const htmlTag = document.documentElement;
+
     const btnMegnyit = document.getElementById('termek_hozzaadas');
     const btnVissza = document.getElementById('vissza_a_listahoz');
     const listaNezet = document.getElementById('admin-lista-nezet');
     const urlapNezet = document.getElementById('admin-urlap-nezet');
-    const btnSotet = document.getElementById('sotet');
-    const btnVilagos = document.getElementById('vilagos');
-    const htmlTag = document.documentElement;
 
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
@@ -18,14 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnMegnyit && btnVissza) {
         btnMegnyit.addEventListener('click', () => {
-            if (listaNezet) listaNezet.style.display = 'none';
-            if (urlapNezet) urlapNezet.style.display = 'block';
+            listaNezet.style.display = 'none';
+            urlapNezet.style.display = 'block';
         });
         btnVissza.addEventListener('click', () => {
-            if (urlapNezet) urlapNezet.style.display = 'none';
-            if (listaNezet) listaNezet.style.display = 'block';
-            const form = document.getElementById('product-form');
-            if (form) form.reset();
+            urlapNezet.style.display = 'none';
+            listaNezet.style.display = 'block';
+            document.getElementById('product-form').reset();
+            document.getElementById('edit-id').value = '';
+            document.getElementById('form-cim').innerText = "Új termék létrehozása";
         });
     }
 
@@ -38,9 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             htmlTag.setAttribute('data-bs-theme', 'light');
             localStorage.setItem('theme', 'light');
         });
-        const mentettTheme = localStorage.getItem('theme');
-        if (mentettTheme) {
-            htmlTag.setAttribute('data-bs-theme', mentettTheme);
-        }
+        const mentett = localStorage.getItem('theme') || 'light';
+        htmlTag.setAttribute('data-bs-theme', mentett);
     }
 });

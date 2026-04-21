@@ -1,20 +1,24 @@
 const gomb = document.getElementById("termek_hozzaadas");
 const visszaGomb = document.getElementById("vissza_termekekhez");
 
-gomb.addEventListener("click", function() { 
-    const termekek = document.getElementsByClassName("termekek");
-    const hozzaadas = document.getElementById("hozzaadas");
-    termekek[0].style.display = "none";
-    hozzaadas.style.display = "block";
-    vissza_termekekhez.style.display = "block";
-    gomb.style.display = "none";
-});
+if (gomb) {
+    gomb.addEventListener("click", function() {
+        const termekek = document.getElementsByClassName("termekek");
+        const hozzaadas = document.getElementById("hozzaadas");
+        if (termekek[0]) termekek[0].style.display = "none";
+        if (hozzaadas) hozzaadas.style.display = "block";
+        if (visszaGomb) visszaGomb.style.display = "block";
+        gomb.style.display = "none";
+    });
+}
 
-visszaGomb.addEventListener("click", function() {
-    const termekek = document.getElementsByClassName("termekek");
-    const hozzaadas = document.getElementById("hozzaadas");
-    termekek[0].style.display = "block";
-    hozzaadas.style.display = "none";
-    vissza_termekekhez.style.display = "none";
-    gomb.style.display = "block";
-});
+if (visszaGomb) {
+    visszaGomb.addEventListener("click", function() {
+        const termekek = document.getElementsByClassName("termekek");
+        const hozzaadas = document.getElementById("hozzaadas");
+        if (termekek[0]) termekek[0].style.display = "block";
+        if (hozzaadas) hozzaadas.style.display = "none";
+        if (visszaGomb) visszaGomb.style.display = "none";
+        if (gomb) gomb.style.display = "block";
+    });
+}
