@@ -10,3 +10,7 @@ Mi volt nehéz?
     A jest tesztek megírása nehéz volt mert elfelejtettem a terminálba a jest teszt lefuttatását. Az elején a github használata kicsit nehéz volt.
 Mit tanultál?
     A jest teszt lefuttatását felenevítettem és a githubba megtanultam hogy kell saját branchet csinálni és mergelni!
+
+Ha 100 forintot kellene szétosztanod a társaid között a befektetett munka
+alapján, ki mennyit kapna?
+M.Geri: 34, N.Domi: 33, Cs.Levi: 33
