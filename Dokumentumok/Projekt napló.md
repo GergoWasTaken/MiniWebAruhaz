@@ -54,12 +54,28 @@ Daily standup (04.15):
 - M.Geri (Scrum Master, FEJLESZTO) szerepkore: Módosítás áthelyezése, Hamburger menü, Teljes oldal tesztelése, PPT
 
 Daily standup (04.20):
-- N.Domi: Mit fogok csinálni? Jest tesztelés
-- N.Domi: Mit csináltam? 
+- N.Domi: Mit fogok csinálni? Jest tesztelés és dokumentáció
+- N.Domi: Mit csináltam? Jest teszteket megcsináltam és dokumentáltam.
 - N.Domi: Mi akadályozott? Semmi.
 - Cs.Levi: Mit fogok csinálni? Módosítás funkció JS folytatása
 - Cs.Levi: Mit csináltam? 
 - Cs.Levi: Mi akadályozott? 
 - M.Geri: Mit fogok csinálni? Módosítás oldal (Admin)
 - M.Geri: Mit csináltam? 
+- M.Geri: Mi akadályozott? Semmi.
+- Cs.Levi: Mit csináltam? Módosítás funkció JS kész
+- Cs.Levi: Mi akadályozott? Semmi.
+- M.Geri: Mit fogok csinálni? Módosítás oldal (Admin) és Hamburger menü
+- M.Geri: Mit csináltam? Módosítás oldal (Admin) és Hamburger menü kész
+- M.Geri: Mi akadályozott? Semmi.
+
+Daily standup (04.21):
+- N.Domi: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
+- N.Domi: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
+- N.Domi: Mi akadályozott? Semmi.
+- Cs.Levi: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
+- Cs.Levi: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
+- Cs.Levi: Mi akadályozott? Semmi.
+- M.Geri: Mit fogok csinálni? Tesztelés és dokumentáció plusz prezentáció
+- M.Geri: Mit csináltam? Tesztelés és dokumentáció plusz prezentáció
 - M.Geri: Mi akadályozott? Semmi.
