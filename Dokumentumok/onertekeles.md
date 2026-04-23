@@ -12,6 +12,20 @@ Elején a put JS elkezdése ment nehezebben. Github-hoz való adaptáció is az 
 
 Mit tanultam?
 Github-on megtanultam hogy hogyan működk a mergelés és hogyan kell a main brench-től különböző branchet létrehozni és használni. megtanultam egy másik felépítését a putnak. 
+M.Geri:
+• munkavégzés: 5
+• együttműködés: 5
+• határidők betartása: 4
+• kód megértése: 4
+• AI használat: 3
+
+• Mi ment jól?
+    A termékek megjelenitése, dizajnolás, fizetés oldal.
+• Mi volt nehéz?
+    A termékeket elmenteni és megjeleniteni egy másik weboldalon a kosárban.
+• Mit tanultál?
+    Azt tanultam meg, hogy bármennyire is jó az AI, nem tud mindenesetben segíteni és nem mindig ad egy olyan működő kódot ami jó nekünk.
+    
 N.Domi:
     munkavégzés: 5
     együttműködés: 5 

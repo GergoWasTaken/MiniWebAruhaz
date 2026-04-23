@@ -36,12 +36,8 @@ function frissitKosar() {
         kontener.innerHTML += `
             <tr>
                 <td><img src="${item.kep}" width="50"> ${item.nev}</td>
-                <td>${Math.round(item.ar * USD_HUF_RATE).toLocaleString('hu-HU')} Ft</td>
-                <td>
-                    <input type="number" value="${item.mennyiseg}" 
-                           onchange="valtoztatMennyiseg(${item.id}, this.value)" 
-                           style="width: 60px;">
-                </td>
+                <td>${Math.round(item.ar * USD_HUF_RATE)} Ft</td>
+                <td><input type="number" value="${item.mennyiseg}" min="1" max="99" onchange="valtoztatMennyiseg(${item.id}, this.value)" style="width: 60px;"></td>
                 <td class="fw-bold">${sorHuf} Ft</td>
                 <td><button class="btn btn-danger btn-sm" onclick="torol(${item.id})">X</button></td>
             </tr>`;
